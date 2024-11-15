@@ -28,7 +28,7 @@ export default defineManifest(async () => ({
     service_worker: "src/scopes/background/index.ts",
     type: "module",
   },
-  permissions: ["storage", "commands"],
+  permissions: ["tabs", "scripting", "storage", "commands"],
   options_page: "src/scopes/options/index.html",
   action: {
     default_icon: "assets/logo-128.png",
@@ -43,15 +43,15 @@ export default defineManifest(async () => ({
     "48": "assets/logo-48.png",
     "128": "assets/logo-128.png",
   },
-  // web_accessible_resources: [
-  //   {
-  //     resources: ["*"],
-  //     matches: hostMatches,
-  //   },
-  // ],
-  // externally_connectable: {
-  //   matches: hostMatches,
-  // },
+  web_accessible_resources: [
+    {
+      resources: ["*"],
+      matches: hostMatches,
+    },
+  ],
+  externally_connectable: {
+    matches: hostMatches,
+  },
   commands: {
     naming_variable: {
       suggested_key: {
