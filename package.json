@@ -1,0 +1,52 @@
+{
+  "name": "chatgpt-prompt",
+  "private": false,
+  "version": "0.0.0",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "serve": "run-s dev:*",
+    "dev:clear": "rimraf dist",
+    "dev:web": "cross-env NODE_ENV=development vite",
+    "build": "run-s build:*",
+    "build:clear": "rimraf dist",
+    "build:logo": "esno scripts/logoBuild.ts",
+    "build:web": "cross-env NODE_ENV=production vite build",
+    "preview": "vite preview",
+    "checkUpdate": "NPM_CHECK_INSTALLER=npm npm-check -u -i",
+    "typecheck": "tsc -p tsconfig.json",
+    "format": "npx prettier --write \"**/*.{js,mjs,cjs,ts,tsx,jsx,json}\"",
+    "postinstall": "npm run build:logo"
+  },
+  "devDependencies": {
+    "@ant-design/icons": "^5.5.1",
+    "@crxjs/vite-plugin": "2.0.0-beta.28",
+    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "@types/chrome": "^0.0.262",
+    "@types/node": "^20.11.19",
+    "@types/react": "18.3.12",
+    "@types/react-dom": "18.3.1",
+    "@vitejs/plugin-react": "4.3.3",
+    "@webextkits/messages-center": "^0.1.4",
+    "@webextkits/storage-local": "^0.1.1",
+    "@webextkits/vite-plugins": "^0.1.4",
+    "antd": "5.22.0",
+    "cross-env": "^7.0.3",
+    "esno": "^4.0.0",
+    "fs-extra": "^11.2.0",
+    "get-port": "^7.0.0",
+    "icon-gen": "^4.0.0",
+    "less": "^4.2.0",
+    "lodash-es": "^4.17.21",
+    "npm-check": "^6.0.1",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.2.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "rimraf": "5.0.5",
+    "typescript": "5.4.3",
+    "vite": "5.4.10"
+  }
+}
