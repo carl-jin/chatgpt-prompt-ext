@@ -17,18 +17,18 @@ export default defineManifest(async () => ({
   },
   minimum_chrome_version: "103",
   version_name: version,
-  content_scripts: [
-    {
-      js: ["src/scopes/content/index.ts"],
-      matches: hostMatches,
-      run_at: "document_end",
-    },
-  ],
+  // content_scripts: [
+  //   {
+  //     js: ["src/scopes/content/index.ts"],
+  //     matches: hostMatches,
+  //     run_at: "document_end",
+  //   },
+  // ],
   background: {
     service_worker: "src/scopes/background/index.ts",
     type: "module",
   },
-  permissions: ["tabs", "scripting", "storage", "commands"],
+  permissions: ["storage", "commands"],
   options_page: "src/scopes/options/index.html",
   action: {
     default_icon: "assets/logo-128.png",
@@ -43,15 +43,15 @@ export default defineManifest(async () => ({
     "48": "assets/logo-48.png",
     "128": "assets/logo-128.png",
   },
-  web_accessible_resources: [
-    {
-      resources: ["*"],
-      matches: hostMatches,
-    },
-  ],
-  externally_connectable: {
-    matches: hostMatches,
-  },
+  // web_accessible_resources: [
+  //   {
+  //     resources: ["*"],
+  //     matches: hostMatches,
+  //   },
+  // ],
+  // externally_connectable: {
+  //   matches: hostMatches,
+  // },
   commands: {
     naming_variable: {
       suggested_key: {

@@ -27,14 +27,14 @@ chrome.commands.onCommand.addListener(async (command) => {
   }
 });
 
-chrome.scripting.registerContentScripts([
-  {
-    id: `inject-${extId}-module`,
-    js: ["externals.js", "injects/index.js"],
-    css: ["injects/index.css"],
-    matches: hostMatches,
-    runAt: "document_end",
-    //  @ts-ignore
-    world: "MAIN",
-  },
-]);
+// chrome.scripting.registerContentScripts([
+//   {
+//     id: `inject-${extId}-module`,
+//     js: ["externals.js", "injects/index.js"],
+//     css: ["injects/index.css"],
+//     matches: hostMatches,
+//     runAt: "document_end",
+//     //  @ts-ignore
+//     world: "MAIN",
+//   },
+// ]);
